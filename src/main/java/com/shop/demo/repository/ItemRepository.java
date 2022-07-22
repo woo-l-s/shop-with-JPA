@@ -9,4 +9,11 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
     List<Item> findByItemNm(String itemNm);
+//    OR조건 처리하기
+    List<Item> findItemNmOrItemDetail(String itemNm, String itemDetail);
+//    Less than 처리하기
+    List<Item> findByPriceLessThan(Integer price);
+
+    List<Item> findByPriceLessThanOrderByPriceDesc(Integer price);
+
 }
